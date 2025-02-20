@@ -15,11 +15,17 @@ export const encrypt=(text)=>{
 }
 
 export const decrypt=(encryptedText)=> {
-  const [ivHex,data] = encryptedText.split(':');
+  try{
+  const [ivHex,data]=encryptedText.split(':');
+  if (!ivHex || !data){ return null};
   const decipher=crypto.createDecipheriv(algorithm,key,Buffer.from(ivHex, 'hex'));
     let decrypted=decipher.update(data,'hex','utf8');
     //   console.log(decrypted)
   decrypted+=decipher.final('utf8');
   return decrypted;
+  } catch (error) {
+    console.error("Decryption failed:", error.message);
+    return null; 
+  }
 }
 

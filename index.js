@@ -4,7 +4,8 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import { rateLimit } from "./middleware/redis";
+import { rateLimit } from "./middleware/redis.js";
+import { router } from "./routes/index.js";
 dotenv.config();
 
 const app = express();
@@ -21,7 +22,7 @@ app.use(
     credentials: true,
   })
 );
-
+app.use("/api",router);
 const PORT= process.env.PORT || "3000";
 // console.log(PORT);
 const MONGO_URL =

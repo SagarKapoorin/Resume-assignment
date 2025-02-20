@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const education_schema=new mongoose.Schema({
   degree: { type: String, required: true },
-  branch: { type: String, required: true },
+  branch: { type: String },
   institution: { type: String, required: true },
   year: { type: Number, min:1900, max: new Date().getFullYear() }
 });
@@ -10,8 +10,8 @@ const education_schema=new mongoose.Schema({
 const experience_schema=new mongoose.Schema({
   job_title: { type: String, required: true },
   company: { type: String, required: true },
-  start_date: { type: Date, required: true },
-  end_date: { type: Date }
+  start_date: { type: String, required: true },
+  end_date: { type:String }
 });
 
 const user_schema=new mongoose.Schema({
@@ -23,14 +23,14 @@ const user_schema=new mongoose.Schema({
     lowercase: true, 
     match: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ 
   },
-  education: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Education' }], 
-  experience: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Experience' }], 
+  education: [education_schema], 
+  experience: [experience_schema], 
   skills: { type: [String], default: [] },
-  summary: { type: String, trim: true }
+  summary: { type: String }
 }, { timestamps: true });
 
 export const Education=mongoose.model('Education', education_schema);
 export const Experience=mongoose.model('Experience', experience_schema);
-export const Applicant=mongoose.model('Applicant', user_schema);
+export const User=mongoose.model('User', user_schema);
 
 
