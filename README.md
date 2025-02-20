@@ -2,10 +2,10 @@
 
 ## Made by: Sagar Kapoor
 ## Live Deployment
-**Live Link:** [[Add live URL here]](https://resume-assignment-tgln.onrender.com)
+**Live Link:** [[live URL here]](https://resume-assignment-tgln.onrender.com)
 
 ## API Testing
-**Postman Collection:** [[Add Postman collection URL here]](https://backend-assignment-1872.postman.co/workspace/Backend-Assignment-Workspace~febad29e-0b72-4fb1-8a8e-33ee4ddcbd01/request/32093952-44f13996-858e-4a24-8668-97bde10cf36e?action=share&creator=32093952&ctx=documentation)
+**Postman Collection:** [[Postman collection URL here]](https://backend-assignment-1872.postman.co/workspace/Backend-Assignment-Workspace~febad29e-0b72-4fb1-8a8e-33ee4ddcbd01/request/32093952-44f13996-858e-4a24-8668-97bde10cf36e?action=share&creator=32093952&ctx=documentation)
 
 This is a backend assignment for a resume data enrichment API. The API allows users to log in, process resumes from PDF files, store extracted data in MongoDB, and retrieve stored information using search functionality.
 
