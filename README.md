@@ -73,7 +73,7 @@ This is a backend assignment for a resume data enrichment API. The API allows us
    ```
 4. Start the server using PM2:
    ```sh
-   pm2 start server.js --name resume-backend
+    npm run start
    ```
 
 ## Live Deployment
