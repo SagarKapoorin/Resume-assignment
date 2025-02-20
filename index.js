@@ -5,10 +5,11 @@ import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
+import { rateLimit } from "./middleware/redis";
 dotenv.config();
 
 const app = express();
-
+app.use(rateLimit);
 app.use(express.json());
 app.use(helmet());
 app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));

@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "dev": "pm2 start index.js -i max --no-daemon",
+    "start": "pm2 start index.js -i max --no-daemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -11,12 +13,18 @@
   "type": "module",
   "description": "",
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "axios": "^1.7.9",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "helmet": "^8.0.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pdf-parse": "^1.1.1",
+    "redis": "^4.7.0"
   }
 }
